@@ -9,7 +9,7 @@ package data;
  *
  * @author usuario09
  */
-public class Terrestre extends Animal {
+public abstract class Terrestre extends Animal {
     private String paisDeOrigen;
 
     public Terrestre(boolean isMale, String name, int edad, String paisDeOrigen) {
@@ -17,8 +17,8 @@ public class Terrestre extends Animal {
         this.paisDeOrigen=paisDeOrigen;
     }
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy un animal terrestre y mi pais de origen es "+getPaisDeOrigen()+". ";
         return infos;
     }

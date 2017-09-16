@@ -5,11 +5,7 @@
  */
 package data;
 
-/**
- *
- * @author usuario09
- */
-public class DelMar extends Acuatico{
+public abstract class DelMar extends Acuatico{
     private int profundidadDondeVive;
 
     public DelMar(boolean isMale, String name, int edad, boolean comeOtrosPescados, int profundidadDondeVive){
@@ -18,8 +14,8 @@ public class DelMar extends Acuatico{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Vivo en el mar a una profundidad de "+getProfundidadDondeVive()+" metros. ";
         return infos;
     }

@@ -22,8 +22,8 @@ public class Salmon extends DeAguaDulce{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy un salmon, ";
         infos+="vengo del Rio "+getRioDeOrigen()+", tengo "+getNumeroDeEspamas()+" espamas y ";
         if(isListoParaComer()) {

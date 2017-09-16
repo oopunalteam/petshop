@@ -5,7 +5,7 @@
  */
 package data;
 
-public class Animal {
+public abstract class Animal {
     private boolean isMale;
     private String name;
     private int edad;
@@ -17,7 +17,7 @@ public class Animal {
         this.edad=edad;
     }
     
-    public String printInfos() {
+    public String toString() {
         String infos="";
         infos+="\nHola, mi nombre es "+getName()+", tengo "+getEdad()+" año(s) y soy ";
         if(isMale()) {

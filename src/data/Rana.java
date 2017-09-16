@@ -22,8 +22,8 @@ public class Rana extends DeAguaDulce{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy una rana, ";
         infos+="mi piel es de color "+getColorDelPiel()+", puedo saltar a una altura de "+getAlturaDelSalto()+"cm, y hablo a una frecuencia de "+getFrecuencia()+" Hz. ";
         return infos;

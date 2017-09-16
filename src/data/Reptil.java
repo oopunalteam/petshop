@@ -9,7 +9,7 @@ package data;
  *
  * @author usuario09
  */
-public class Reptil  extends Terrestre{
+public abstract class Reptil  extends Terrestre{
     private boolean tienePatas;
 
     public Reptil(boolean isMale, String name, int edad, String paisDeOrigen, boolean tienePatas) {
@@ -18,8 +18,8 @@ public class Reptil  extends Terrestre{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy tambien un reptil y ";
         if(!tienePatas()) {
             infos+="no ";

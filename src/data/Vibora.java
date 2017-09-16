@@ -22,8 +22,8 @@ public class Vibora extends Reptil{
     }
     
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy una vibora, ";
         infos+="mido "+getTamano()+"cm. ";
         if(isEsPeligroso()){

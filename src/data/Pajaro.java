@@ -5,11 +5,7 @@
  */
 package data;
 
-/**
- *
- * @author usuario09
- */
-public class Pajaro extends Terrestre {
+public abstract class Pajaro extends Terrestre {
     private int tamanoDeAlas;
 
     public Pajaro(boolean isMale, String name, int edad, String paisDeOrigen, int tamanoDeAlas) {
@@ -18,8 +14,8 @@ public class Pajaro extends Terrestre {
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy un parajo y mis alas miden "+getTamanoDeAlas()+"centimetros de longitud. ";
         return infos;
     }

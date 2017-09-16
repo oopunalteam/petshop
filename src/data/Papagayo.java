@@ -22,8 +22,8 @@ public class Papagayo extends Pajaro{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy un papagayo. ";
         infos+="Las colores de mis plumas son : ";
         for(int i=0; i<coloresDePlumas.length;i++){

@@ -1,16 +1,15 @@
 package ui;
 
-import business.test;
 import data.Animal;
 import java.util.ArrayList;
 
 import java.util.Scanner;
 
-public class UI {
+public abstract class PetStoreUI {
     private static Scanner reader = new Scanner(System.in);
 
-    public static void printInfos(String infos) {
-        System.out.println(infos);
+    public static void printPet(Animal Pet) {
+        System.out.println(Pet);
     }
 
     public static void sayWelcome() {
@@ -18,42 +17,13 @@ public class UI {
     }
 
     public static void pause() {
+        reader.reset();
         System.out.println("\n\nPress Enter to continue...\n\n");
         reader.nextLine();
     }
 
-    public static void printMenu1() {
-        System.out.println("Please choose a pet category from the following list :\n");
-        System.out.printf("%s%15s%10s%10s\n","0 - ","Ballena",test.getBallenaList().length," animal(es)");
-        System.out.printf("%s%15s%10s%10s\n","1 - ","Paloma",test.getPalomaList().length," animal(es)");
-        System.out.printf("%s%15s%10s%10s\n","2 - ","Papagayo", test.getPapagayoList().length," animal(es)");
-        System.out.printf("%s%15s%10s%10s\n","3 - ","Rana", test.getRanaList().length," animal(es)");
-        System.out.printf("%s%15s%10s%10s\n","4 - ","Salmon", test.getSalmonList().length," animal(es)");
-        System.out.printf("%s%15s%10s%10s\n","5 - ","Vibora", test.getViboraList().length," animal(es)");
-        System.out.printf("%s%15s%10s\n","6 - ","","EXIT THE PETSHOP");
-    }
-
-    public static void printMenu2(int length) {
-        System.out.println("\n\nPlease, now choose an animal from the selected category :\n");
-        for(int i=0; i<length;i++) {
-            System.out.printf("%4s%10s\n",i," - Animal "+i);
-        }
-    }
-
     public static void sayGoodBy() {
         System.out.println("\n You're leaving the PetShop, See you soon !");
-    }
-
-    public static int askInt(int max) {
-        int read=max+1;
-        while(read<0 || !(read<=max)) {
-            System.out.println("Your selection : ");
-            read = reader.nextInt();
-            if(read<0 || !(read<=max)) {
-                System.out.println("ERROR, Please enter a number between 0 and "+max);
-            }
-        }
-        return read;
     }
 
 
@@ -71,6 +41,7 @@ public class UI {
         ArrayList<Integer> intList = new ArrayList<Integer>();
         while(intList.isEmpty()) {
             System.out.println("Your selection : ");
+            reader.reset();
             String read = reader.nextLine();
             read=read.replace(" ", "");
             String[] readList = read.split(",");
@@ -87,5 +58,31 @@ public class UI {
         }
         
         return intList;
+    }
+
+    public static boolean askQuit() {
+        boolean flag=true;
+        boolean loopFlag=true;
+        while(loopFlag) {
+            System.out.println("Do you want to Quit the PetStore (Q) or Search for others Pets (S) ?");
+            System.out.print("Please type Q or S : ");
+            reader.reset();
+            String read = reader.nextLine();
+            read = read.toUpperCase();
+            switch (read.charAt(0)) {
+                case 'Q':
+                    flag=false;
+                    loopFlag=false;
+                    break;
+                case 'S':
+                    flag=true;
+                    loopFlag=false;
+                    break;
+                default:
+                    System.out.println("ERROR, you must type Q or S !\n\n\n");
+                    break;
+            }
+        }
+        return flag;
     }
 }

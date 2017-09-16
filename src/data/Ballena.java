@@ -5,10 +5,6 @@
  */
 package data;
 
-/**
- *
- * @author usuario09
- */
 public class Ballena extends DelMar{
     private int peso;
     private String marDeOrigen;
@@ -22,8 +18,8 @@ public class Ballena extends DelMar{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy una ballena. ";
         infos+="Peso "+getPeso()+" Kg y vengo de "+getMarDeOrigen()+". ";
         if(isEstaVivante()){

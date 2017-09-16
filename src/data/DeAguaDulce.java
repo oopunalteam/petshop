@@ -5,11 +5,7 @@
  */
 package data;
 
-/**
- *
- * @author usuario09
- */
-public class DeAguaDulce extends Acuatico{
+public abstract class DeAguaDulce extends Acuatico{
     private boolean puedeSubirLosRios;
 
     public DeAguaDulce(boolean isMale, String name, int edad, boolean comeOtrosPescados, boolean puedeSubirLosRios){
@@ -18,8 +14,8 @@ public class DeAguaDulce extends Acuatico{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         if(isPuedeSubirLosRios()) {
             infos+="Me gusta tan nadar que puedo subir los rios con mis amigos. ";
         }

@@ -22,8 +22,8 @@ public class Paloma  extends Pajaro{
     }
 
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy un paloma. ";
         infos+="Vengo de la ciudad "+getCiudadDeOrigen()+", tengo "+getNumeroDePatas()+" patas y ";
         if(!isEstaAmaestrado()){

@@ -5,11 +5,8 @@
  */
 package data;
 
-/**
- *
- * @author usuario09
- */
-public class Acuatico extends Animal{
+
+public abstract class Acuatico extends Animal{
     private boolean comeOtrosPescados;
 
     public Acuatico(boolean isMale, String name, int edad, boolean comeOtrosPescados){
@@ -18,8 +15,8 @@ public class Acuatico extends Animal{
 
     }
     @Override
-    public String printInfos() {
-        String infos=super.printInfos()+"\n";
+    public String toString() {
+        String infos=super.toString()+"\n";
         infos+="Soy un animal aquatico. ";
         if(isComeOtrosPescados()) {
             infos+="Algunas veces, como otros pescados. ";

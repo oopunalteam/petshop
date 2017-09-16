@@ -8,10 +8,10 @@ import data.Rana;
 import data.Salmon;
 import data.Vibora;
 import java.util.ArrayList;
-import ui.UI;
+import ui.PetStoreUI;
 
 
-public class test1 {
+public abstract class PetStoreTest {
 
     private static ArrayList<Animal> animalList = new ArrayList<Animal>();
 
@@ -19,22 +19,24 @@ public class test1 {
 
     public static void main(String args[]){
         initAnimals();
-        UI.sayWelcome();
+        PetStoreUI.sayWelcome();
         loop();
+        PetStoreUI.sayGoodBy();
     }
 
     private static void loop() {
         boolean flag=true;
         while(flag) {
-            UI.printMenuMyt(animalList);
+            PetStoreUI.printMenuMyt(animalList);
             ArrayList<Integer> choices;
-            choices = UI.askIntMyt(animalList.size());
+            choices = PetStoreUI.askIntMyt(animalList.size());
             for(int i=0; i<choices.size();i++) {
-                Animal animal = animalList.get(i);
-                UI.printInfos(animal.printInfos());
+                Animal animal = animalList.get(choices.get(i));
+                PetStoreUI.printPet(animal);
             }
 
-        UI.pause();
+        PetStoreUI.pause();
+        flag=PetStoreUI.askQuit();
         }
     }
 
