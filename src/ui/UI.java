@@ -10,7 +10,7 @@ public class UI {
     private static Scanner reader = new Scanner(System.in);
 
     public static void printInfos(String infos) {
-        System.out.print(infos);
+        System.out.println(infos);
     }
 
     public static void sayWelcome() {
@@ -18,9 +18,8 @@ public class UI {
     }
 
     public static void pause() {
-        String useless=reader.nextLine();
         System.out.println("\n\nPress Enter to continue...\n\n");
-        useless=reader.nextLine();
+        reader.nextLine();
     }
 
     public static void printMenu1() {
