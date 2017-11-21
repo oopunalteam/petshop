@@ -10,9 +10,9 @@ import data.Vibora;
 
 import java.io.*;
 import java.util.ArrayList;
+import ui.PetStoreGUI;
 
-import ui.PetStoreUI;
-import ui.UI;
+import ui.*;
 
 public abstract class PetStoreTest {
 
@@ -22,11 +22,12 @@ public abstract class PetStoreTest {
     public static void main(String args[]) {
         initAnimals();
         saveList.setList(animalList);
-        userInterface=new PetStoreUI();
+        userInterface=new PetStoreGUI();
         userInterface.sayWelcome();
         loop();
         autoSave();
         userInterface.sayGoodBy();
+        System.exit(0);
     }
 
     private static void loop() {
