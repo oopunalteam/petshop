@@ -7,12 +7,13 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  *
  * @author usuario09
  */
-public class Vibora extends Reptil{
+public class Vibora extends Reptil implements Serializable {
     private boolean puedeNadar;
     private boolean esPeligroso;
     private int tamano;
@@ -23,7 +24,9 @@ public class Vibora extends Reptil{
         this.esPeligroso=esPeligroso;
         this.tamano=tamano;
     }
-    
+    public Vibora() {
+
+    }
     @Override
     public void write(BufferedWriter writer) {
         try{

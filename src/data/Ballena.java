@@ -7,8 +7,9 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class Ballena extends DelMar{
+public class Ballena extends DelMar implements Serializable {
     private int peso;
     private String marDeOrigen;
     private boolean estaVivante;
@@ -19,7 +20,10 @@ public class Ballena extends DelMar{
         this.marDeOrigen=marDeOrigen;
         this.estaVivante=estaVivante;
     }
-    
+
+    public Ballena() {
+
+    }
     
     @Override
     public void write(BufferedWriter writer) {

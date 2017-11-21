@@ -7,12 +7,13 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  *
  * @author usuario09
  */
-public class Salmon extends DeAguaDulce{
+public class Salmon extends DeAguaDulce implements Serializable {
     private String rioDeOrigen;
     private int numeroDeEspamas;
     private boolean listoParaComer;
@@ -23,7 +24,9 @@ public class Salmon extends DeAguaDulce{
         this.numeroDeEspamas=numeroDeEspamas;
         this.listoParaComer=listoParaComer;
     }
-    
+    public Salmon(){
+
+    }
         @Override
         public void write(BufferedWriter writer) {
         try{

@@ -5,18 +5,22 @@
  */
 package data;
 
+import java.io.Serializable;
+
 /**
  *
  * @author usuario09
  */
-public abstract class Reptil  extends Terrestre{
+public abstract class Reptil  extends Terrestre implements Serializable {
     private boolean tienePatas;
 
     public Reptil(boolean isMale, String name, int edad, String paisDeOrigen, boolean tienePatas) {
         super(isMale, name, edad, paisDeOrigen);
         this.tienePatas=tienePatas;
     }
+    public Reptil() {
 
+    }
     @Override
     public String toString() {
         String infos=super.toString()+"\n";

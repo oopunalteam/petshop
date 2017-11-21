@@ -5,16 +5,21 @@
  */
 package data;
 
+import java.io.Serializable;
+
 /**
  *
  * @author usuario09
  */
-public abstract class Terrestre extends Animal {
+public abstract class Terrestre extends Animal  implements Serializable {
     private String paisDeOrigen;
 
     public Terrestre(boolean isMale, String name, int edad, String paisDeOrigen) {
         super(isMale, name, edad);
         this.paisDeOrigen=paisDeOrigen;
+    }
+    public Terrestre() {
+
     }
     @Override
     public String toString() {

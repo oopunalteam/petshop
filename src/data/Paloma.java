@@ -7,12 +7,13 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  *
  * @author usuario09
  */
-public class Paloma  extends Pajaro{
+public class Paloma  extends Pajaro implements Serializable {
     private String ciudadDeOrigen;
     private boolean estaAmaestrado;
     private int numeroDePatas;
@@ -23,7 +24,9 @@ public class Paloma  extends Pajaro{
         this.estaAmaestrado=estaAmaestrado;
         this.numeroDePatas=numeroDePatas;
     }
-    
+    public Paloma() {
+
+    }
     @Override
     public void write(BufferedWriter writer) {
         try{

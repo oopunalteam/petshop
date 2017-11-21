@@ -7,8 +7,9 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
-public abstract class Animal {
+public abstract class Animal implements Serializable {
     private boolean isMale;
     private String name;
     private int edad;
@@ -18,6 +19,10 @@ public abstract class Animal {
         this.name=name;
         this.isMale=isMale;
         this.edad=edad;
+    }
+
+    public Animal() {
+
     }
     
     public void write(BufferedWriter writer) {

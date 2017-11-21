@@ -6,7 +6,9 @@
 package data;
 
 
-public abstract class Acuatico extends Animal{
+import java.io.Serializable;
+
+public abstract class Acuatico extends Animal implements Serializable {
     private boolean comeOtrosPescados;
 
     public Acuatico(boolean isMale, String name, int edad, boolean comeOtrosPescados){
@@ -14,6 +16,11 @@ public abstract class Acuatico extends Animal{
         this.comeOtrosPescados=comeOtrosPescados;
 
     }
+
+    public Acuatico() {
+
+    }
+
     @Override
     public String toString() {
         String infos=super.toString()+"\n";

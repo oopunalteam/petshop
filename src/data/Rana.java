@@ -7,12 +7,13 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  *
  * @author usuario09
  */
-public class Rana extends DeAguaDulce{
+public class Rana extends DeAguaDulce implements Serializable {
     private String colorDelPiel;
     private int frecuencia;
     private int alturaDelSalto;
@@ -23,7 +24,9 @@ public class Rana extends DeAguaDulce{
         this.frecuencia=frecuencia;
         this.alturaDelSalto=alturaDelSalto;
     }
+    public Rana(){
 
+    }
     @Override
     public void write(BufferedWriter writer) {
         try{

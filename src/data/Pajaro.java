@@ -5,14 +5,18 @@
  */
 package data;
 
-public abstract class Pajaro extends Terrestre {
+import java.io.Serializable;
+
+public abstract class Pajaro extends Terrestre implements Serializable {
     private int tamanoDeAlas;
 
     public Pajaro(boolean isMale, String name, int edad, String paisDeOrigen, int tamanoDeAlas) {
         super(isMale, name, edad, paisDeOrigen);
         this.tamanoDeAlas=tamanoDeAlas;
     }
+    public Pajaro(){
 
+    }
     @Override
     public String toString() {
         String infos=super.toString()+"\n";

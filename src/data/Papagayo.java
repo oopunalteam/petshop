@@ -7,12 +7,13 @@ package data;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  *
  * @author usuario09
  */
-public class Papagayo extends Pajaro{
+public class Papagayo extends Pajaro implements Serializable {
     private boolean puedeHablar;
     private String[] coloresDePlumas;
     private boolean puedeVolar;
@@ -23,7 +24,9 @@ public class Papagayo extends Pajaro{
         this.coloresDePlumas=coloresDePlumas;
         this.puedeVolar=puedeVolar;
     }
-    
+    public Papagayo(){
+
+    }
     @Override
     public void write(BufferedWriter writer) {
         try{

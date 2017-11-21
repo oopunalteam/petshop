@@ -5,14 +5,18 @@
  */
 package data;
 
-public abstract class DelMar extends Acuatico{
+import java.io.Serializable;
+
+public abstract class DelMar extends Acuatico implements Serializable {
     private int profundidadDondeVive;
 
     public DelMar(boolean isMale, String name, int edad, boolean comeOtrosPescados, int profundidadDondeVive){
         super(isMale, name, edad, comeOtrosPescados);
         this.profundidadDondeVive=profundidadDondeVive;
     }
+    public DelMar(){
 
+    }
     @Override
     public String toString() {
         String infos=super.toString()+"\n";

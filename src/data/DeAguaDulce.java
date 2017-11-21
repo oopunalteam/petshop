@@ -5,14 +5,18 @@
  */
 package data;
 
-public abstract class DeAguaDulce extends Acuatico{
+import java.io.Serializable;
+
+public abstract class DeAguaDulce extends Acuatico implements Serializable {
     private boolean puedeSubirLosRios;
 
     public DeAguaDulce(boolean isMale, String name, int edad, boolean comeOtrosPescados, boolean puedeSubirLosRios){
         super(isMale, name, edad, comeOtrosPescados);
         this.puedeSubirLosRios=puedeSubirLosRios;
     }
+    public DeAguaDulce() {
 
+    }
     @Override
     public String toString() {
         String infos=super.toString()+"\n";
