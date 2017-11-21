@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 public class Ballena extends DelMar{
     private int peso;
     private String marDeOrigen;
@@ -15,6 +18,24 @@ public class Ballena extends DelMar{
         this.peso=peso;
         this.marDeOrigen=marDeOrigen;
         this.estaVivante=estaVivante;
+    }
+    
+    
+    @Override
+    public void write(BufferedWriter writer) {
+        try{
+        writer.write("Nombre - edad - peso - mardeorigen - ¿esMacho?");
+        writer.newLine();
+        writer.write(this.getName()
+                +","+this.getEdad()
+                +","+this.getPeso()
+                +","+this.getMarDeOrigen()
+                +","+this.isMale());
+        writer.newLine();
+        }
+        catch(IOException e) {
+            
+        }
     }
 
     @Override

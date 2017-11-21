@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 /**
  *
  * @author usuario09
@@ -19,6 +22,23 @@ public class Salmon extends DeAguaDulce{
         this.rioDeOrigen=rioDeOrigen;
         this.numeroDeEspamas=numeroDeEspamas;
         this.listoParaComer=listoParaComer;
+    }
+    
+        @Override
+        public void write(BufferedWriter writer) {
+        try{
+        writer.write("Nombre - edad - NumeroDeEspamas - RioDeOrigen - ¿isMacho?");
+        writer.newLine();
+        writer.write(this.getName()
+                +","+this.getEdad()                
+                +","+this.getNumeroDeEspamas()
+                +","+this.getRioDeOrigen()
+                +","+this.isMale()+"\n");
+        writer.newLine();
+        }
+        catch(IOException e) {
+            
+        }
     }
 
     @Override

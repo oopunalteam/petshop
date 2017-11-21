@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 /**
  *
  * @author usuario09
@@ -19,6 +22,23 @@ public class Vibora extends Reptil{
         this.puedeNadar=puedeNadar;
         this.esPeligroso=esPeligroso;
         this.tamano=tamano;
+    }
+    
+    @Override
+    public void write(BufferedWriter writer) {
+        try{
+        writer.write("Nombre - edad - Tamanio - PaisDeOrigen - ¿EsPeligroso?");
+        writer.newLine();
+        writer.write(this.getName()
+                +","+this.getEdad()
+                +","+this.getTamano()
+                +","+this.getPaisDeOrigen()        
+                +","+this.isEsPeligroso()+"\n");
+        writer.newLine();
+        }
+        catch(IOException e) {
+            
+        }
     }
     
     @Override

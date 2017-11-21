@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 /**
  *
  * @author usuario09
@@ -19,6 +22,23 @@ public class Paloma  extends Pajaro{
         this.ciudadDeOrigen=ciudadDeOrigen;
         this.estaAmaestrado=estaAmaestrado;
         this.numeroDePatas=numeroDePatas;
+    }
+    
+    @Override
+    public void write(BufferedWriter writer) {
+        try{
+       writer.write("Nombre - edad - PaisDeOrigen - EstaAmaestrado - TamanoDeAlas");
+        writer.newLine();
+        writer.write(this.getName()
+                +","+this.getEdad()
+                +","+this.getPaisDeOrigen()
+                +","+this.isEstaAmaestrado()
+                +","+this.getTamanoDeAlas()+"\n");
+        writer.newLine();
+        }
+        catch(IOException e) {
+            
+        }
     }
 
     @Override

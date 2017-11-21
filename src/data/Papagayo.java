@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 /**
  *
  * @author usuario09
@@ -19,6 +22,23 @@ public class Papagayo extends Pajaro{
         this.puedeHablar=puedeHablar;
         this.coloresDePlumas=coloresDePlumas;
         this.puedeVolar=puedeVolar;
+    }
+    
+    @Override
+    public void write(BufferedWriter writer) {
+        try{
+        writer.write("Nombre - edad - ¿puedeVolar? - ¿puedeHablar? - ¿isMacho?");
+        writer.newLine();
+        writer.write(this.getName()
+                +","+this.getEdad()
+                +","+this.puedeVolar()
+                +","+this.puedeHablar()
+                +","+this.isMale()+"\n");
+        writer.newLine();
+        }
+        catch(IOException e) {
+            
+        }
     }
 
     @Override

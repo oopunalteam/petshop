@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 public abstract class Animal {
     private boolean isMale;
     private String name;
@@ -15,6 +18,9 @@ public abstract class Animal {
         this.name=name;
         this.isMale=isMale;
         this.edad=edad;
+    }
+    
+    public void write(BufferedWriter writer) {
     }
     
     public String toString() {

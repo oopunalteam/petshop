@@ -5,6 +5,9 @@
  */
 package data;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 /**
  *
  * @author usuario09
@@ -21,6 +24,23 @@ public class Rana extends DeAguaDulce{
         this.alturaDelSalto=alturaDelSalto;
     }
 
+    @Override
+    public void write(BufferedWriter writer) {
+        try{
+        writer.write("Nombre - edad - AlturaDelSalto - ColorDelPiel - ¿isMacho?");
+        writer.newLine();
+        writer.write(this.getName()
+                +","+this.getEdad()
+                +","+this.getAlturaDelSalto()
+                +","+this.getColorDelPiel()
+                +","+this.isMale()+"\n");
+        writer.newLine();
+        }
+        catch(IOException e) {
+            
+        }
+    }
+    
     @Override
     public String toString() {
         String infos=super.toString()+"\n";

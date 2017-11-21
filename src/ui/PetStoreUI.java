@@ -2,7 +2,6 @@ package ui;
 
 import data.Animal;
 import java.util.ArrayList;
-
 import java.util.Scanner;
 
 public abstract class PetStoreUI {
@@ -33,14 +32,16 @@ public abstract class PetStoreUI {
         
         for(int i=0; i<animalList.size();i++) {
             System.out.println(i+" - "+animalList.get(i).getName());
+            if(i==animalList.size()-1) {
+                System.out.println((i+1)+" - Export datas");
+            }
         }
         
     }
-
     public static ArrayList<Integer> askIntMyt(int maxInt) {
         ArrayList<Integer> intList = new ArrayList<Integer>();
         while(intList.isEmpty()) {
-            System.out.println("Your selection : ");
+            System.out.println("Your selection is: ");
             reader.reset();
             String read = reader.nextLine();
             read=read.replace(" ", "");
